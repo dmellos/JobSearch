@@ -1,5 +1,8 @@
 target
+Servers
 .settings
 .classpath
 .project
 .springBeans
+/.metadata/
+/.metadata/

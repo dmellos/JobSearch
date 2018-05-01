@@ -15,7 +15,6 @@ import boot.model.JobBean;
 @Service
 public class JobService {
 
-	@Autowired
 	private final JobInterface jobDao;
 
 	public JobService(JobInterface jobDao) {
@@ -31,6 +30,16 @@ public class JobService {
 		return jobList;
 	}
 	
+	public void save(JobBean job) {
+		jobDao.save(job);
+	}
 	
+	public void delete(int id) {
+		jobDao.delete(id);
+	}
+	
+	public JobBean findJob(int id) {
+		return jobDao.findOne(id);
+	}
 	
 }
