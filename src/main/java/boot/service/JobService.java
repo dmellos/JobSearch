@@ -42,4 +42,11 @@ public class JobService {
 		return jobDao.findOne(id);
 	}
 	
+	public List<JobBean> findAllByTitle(String title){
+		List<JobBean> jobList = new ArrayList<>();
+		for(JobBean job: jobDao.findAllByTitle(title)) {
+			jobList.add(job);
+		}
+		return jobList;
+	}
 }

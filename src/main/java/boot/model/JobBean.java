@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.beans.factory.annotation.Required;
+
 
 @Entity(name="jobsearch")
 public class JobBean implements Serializable{
@@ -49,6 +51,8 @@ public class JobBean implements Serializable{
 	public String getTitle() {
 		return title;
 	}
+	
+	@Required
 	public void setTitle(String title) {
 		this.title = title;
 	}

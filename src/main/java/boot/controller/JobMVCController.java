@@ -10,7 +10,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import boot.model.JobBean;
@@ -69,6 +68,13 @@ public class JobMVCController {
 	public String viewJob(@RequestParam int id, HttpServletRequest request) {
 		request.setAttribute("job", jobService.findJob(id));
 		request.setAttribute("mode", "MODE_VIEW");
+		return "index";
+	}
+	
+	@GetMapping("/search-results")
+	public String viewJob(@RequestParam String title, HttpServletRequest request) {
+		request.setAttribute("joblist", jobService.findAllByTitle(title));
+		request.setAttribute("mode", "MODE_JOBS");
 		return "index";
 	}
 }

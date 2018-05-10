@@ -27,7 +27,12 @@
 				<ul class="nav navbar-nav" style="float:right;">
 					<li><a href="post-job">Post New Job</a></li>
 					<li><a href="jobs">All Jobs</a></li>
-					<li><a>Search Positions</a></li>
+					<li>
+						<form class="form-horizontal" method="GET" action="search-results">
+							<input type="text" name="title" class="form-control" placeholder="job title"/>
+							<input type="submit" class="btn btn-primary" value="Search"/>
+						</form>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -37,7 +42,7 @@
 		<c:when test="${mode == 'MODE_HOME'}">
 			<div class="container" id="homeDiv">
 				<div class="jumbotron text-center">
-					<h1>Jobs - Lets get Hired<sup><b>1.0</b></sup></h1>
+					<h1>Jobs - We Hire<sup><b>1.0</b></sup></h1>
 				</div>
 			</div>
 		</c:when>
